@@ -47,11 +47,54 @@ def leer_vuelo(texto):
     return [salida, llegada, aerolinea, duracion, escalas, co2, precio]
 
 
+# Despliega un vuelo y devuelve los datos extra que salen al abrirlo
+def leer_detalles(elemento):
+    # Google solo avisa del equipaje de mano cuando NO está incluido
+    if "equipaje de mano" in elemento.get_attribute("innerHTML").lower():
+        equipaje_mano = "no"
+    else:
+        equipaje_mano = "si"
+
+    # Pulsar el botón de "Detalles del vuelo"
+    try:
+        boton = elemento.find_element(By.XPATH, './/button[contains(@aria-label, "etalles")]')
+        driver.execute_script("arguments[0].click();", boton)
+        time.sleep(2)
+    except:
+        return ["", "", "", "", "", "", "", equipaje_mano]
+
+    texto = elemento.text
+    num_vuelo = ""
+    avion = ""
+    piernas = ""
+
+    # Si hay escalas nos quedamos con el primer tramo
+    for linea in texto.split("\n"):
+        # Ejemplo: "Air Europa · Turista · Boeing 737 · UX 7701"
+        partes = linea.split(" · ")
+        if len(partes) >= 3 and num_vuelo == "":
+            avion = partes[-2]
+            num_vuelo = partes[-1]
+        # Ejemplo: "Espacio medio para las piernas (76 cm)"
+        if "piernas" in linea and "cm" in linea and piernas == "":
+            piernas = linea.split("(")[-1].replace("cm)", "").strip()
+
+    texto = texto.lower()
+    wifi = "si" if "wi-fi" in texto else "no"
+    enchufes = "si" if "corriente" in texto or "usb" in texto else "no"
+    pantallas = "si" if "vídeo" in texto or "pantalla" in texto else "no"
+    retrasos = "si" if "retrasa" in texto else "no"
+
+    return [num_vuelo, avion, piernas, wifi, enchufes, pantallas, retrasos, equipaje_mano]
+
+
 # Crear el CSV y escribir la primera fila (los nombres de las columnas)
 archivo = open("vuelos.csv", "w", newline="", encoding="utf-8")
 escritor = csv.writer(archivo)
 escritor.writerow(["fecha", "origen", "destino", "salida", "llegada",
-                   "aerolinea", "duracion", "escalas", "co2", "precio"])
+                   "aerolinea", "duracion", "escalas", "co2", "precio",
+                   "num_vuelo", "avion", "piernas_cm", "wifi", "enchufes",
+                   "pantallas", "suele_retrasarse", "equipaje_mano"])
 
 # Abrir Chrome y rechazar las cookies
 driver = webdriver.Chrome()
@@ -92,8 +135,14 @@ for dia in range(1, dias_mes + 1):
                 if "€" not in texto:
                     continue
 
-                datos = leer_vuelo(texto)
-                fila = [fecha, origen, destino] + datos
+                # Si algún vuelo viene raro, lo saltamos en vez de parar el programa
+                try:
+                    datos = leer_vuelo(texto)
+                    detalles = leer_detalles(elemento)
+                except:
+                    continue
+
+                fila = [fecha, origen, destino] + datos + detalles
                 escritor.writerow(fila)
                 print(fila)
 
