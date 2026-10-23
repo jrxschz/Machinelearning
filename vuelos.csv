@@ -1,3 +1,4 @@
+fecha_consulta,fecha,origen,destino,salida,llegada,aerolinea,duracion,escalas,co2,precio,num_vuelo,avion,piernas_cm,wifi,enchufes,pantallas,suele_retrasarse,equipaje_mano
 2026-10-22,2026-10-23,MAD,BCN,7:30,8:55,Air Europa,1 h 25 min,Directo,57 kg CO2e,211 €,,,79,no,si,si,no,si
 2026-10-22,2026-10-23,MAD,BCN,21:35,22:50,Iberia,1 h 15 min,Directo,61 kg CO2e,231 €,,,71,si,si,no,no,si
 2026-10-22,2026-10-23,MAD,BCN,7:05,8:25,Iberia,1 h 20 min,Directo,69 kg CO2e,242 €,,,71,si,si,no,no,si
