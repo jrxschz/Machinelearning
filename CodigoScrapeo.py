@@ -1,22 +1,19 @@
 import csv
+import os
 import time
 import random
+from datetime import date, timedelta
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+
 # Aeropuertos que vamos a buscar
 aeropuertos = [
-    "MAD", "BCN", "AGP", "ALC", "VLC", "SVQ", "BIO", "SCQ", "LCG", "VGO",
-    "OVD", "SDR", "EAS", "VIT", "PNA", "RJL", "ZAZ", "GRO", "REU", "RMU",
-    "LEI", "GRX", "XRY", "ODB", "BJZ", "VLL", "LEN", "RGS", "SLM", "CDT",
-    "PMI", "IBZ", "MAH", "LPA", "TFS", "TFN", "ACE", "FUE", "SPC", "GMZ",
-    "VDE", "MLN",
+    "MAD", "BCN", "VLC", "TFS", "SVQ"
 ]
 
-# Mes que vamos a buscar (noviembre de 2026, que tiene 30 días)
-anio = 2026
-mes = 11
-dias_mes = 30
+# Cuántos días hacia delante vamos a buscar (a partir de mañana)
+dias_a_buscar = 30
 
 
 # Recibe el texto de un vuelo y devuelve una lista con sus datos
@@ -88,13 +85,20 @@ def leer_detalles(elemento):
     return [num_vuelo, avion, piernas, wifi, enchufes, pantallas, retrasos, equipaje_mano]
 
 
-# Crear el CSV y escribir la primera fila (los nombres de las columnas)
-archivo = open("vuelos.csv", "w", newline="", encoding="utf-8")
+# Abrir el CSV para añadir filas al final (sin borrar lo anterior)
+# Si el archivo no existía, escribimos primero los nombres de las columnas
+existia = os.path.exists("vuelos.csv")
+archivo = open("vuelos.csv", "a", newline="", encoding="utf-8")
 escritor = csv.writer(archivo)
-escritor.writerow(["fecha", "origen", "destino", "salida", "llegada",
-                   "aerolinea", "duracion", "escalas", "co2", "precio",
-                   "num_vuelo", "avion", "piernas_cm", "wifi", "enchufes",
-                   "pantallas", "suele_retrasarse", "equipaje_mano"])
+if not existia:
+    escritor.writerow(["fecha_consulta", "fecha", "origen", "destino", "salida", "llegada",
+                       "aerolinea", "duracion", "escalas", "co2", "precio",
+                       "num_vuelo", "avion", "piernas_cm", "wifi", "enchufes",
+                       "pantallas", "suele_retrasarse", "equipaje_mano"])
+
+# Día en que se ejecuta el programa (ejemplo: 2026-10-22)
+hoy = date.today()
+fecha_consulta = hoy.isoformat()
 
 # Abrir Chrome y rechazar las cookies
 driver = webdriver.Chrome()
@@ -106,8 +110,8 @@ except:
     pass  # si no sale el botón, seguimos
 
 # Buscar cada día, cada origen y cada destino
-for dia in range(1, dias_mes + 1):
-    fecha = f"{anio}-{mes}-{dia:02d}"   # ejemplo: 2026-11-01
+for dia in range(1, dias_a_buscar + 1):
+    fecha = (hoy + timedelta(days=dia)).isoformat()   # ejemplo: 2026-10-23
 
     for origen in aeropuertos:
         for destino in aeropuertos:
@@ -142,7 +146,7 @@ for dia in range(1, dias_mes + 1):
                 except:
                     continue
 
-                fila = [fecha, origen, destino] + datos + detalles
+                fila = [fecha_consulta, fecha, origen, destino] + datos + detalles
                 escritor.writerow(fila)
                 print(fila)
 
