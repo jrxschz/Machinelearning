@@ -9,7 +9,7 @@ from selenium.webdriver.common.by import By
 
 # Aeropuertos que vamos a buscar
 aeropuertos = [
-    "MAD", "BCN", "VLC", "TFS", "SVQ"
+    "MAD", "TFS", "PMI", "IBZ", "LPA"
 ]
 
 # Cuántos días hacia delante vamos a buscar (a partir de mañana)
