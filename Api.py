@@ -33,81 +33,72 @@ aeropuertos = [
 ]
 dias_a_buscar = 30
 
+COLUMNAS = ["fecha_consulta", "fecha", "origen", "destino", "salida", "llegada",
+            "aerolinea", "duracion", "escalas", "co2", "precio",
+            "num_vuelo", "avion", "piernas_cm", "wifi", "enchufes",
+            "pantallas", "suele_retrasarse", "equipaje_mano"]
+
+
+def si_no(condicion):
+    return "si" if condicion else "no"
+
 
 # Extrae los datos de un vuelo del JSON de SerpApi
 def leer_vuelo(vuelo):
-    tramo = vuelo["flights"][0]  # Nos quedamos con el primer tramo
-
-    # Horas de salida y llegada (vienen como "2026-10-23 07:30")
-    salida = tramo["departure_airport"]["time"].split(" ")[1]
-    llegada = vuelo["flights"][-1]["arrival_airport"]["time"].split(" ")[1]
-
-    aerolinea = tramo.get("airline", "")
-    duracion = f"{vuelo['total_duration'] // 60} h {vuelo['total_duration'] % 60} min"
-
-    # Escalas
-    num_escalas = len(vuelo.get("layovers", []))
-    escalas = "Directo" if num_escalas == 0 else f"{num_escalas} escala"
-
-    # CO2 y precio
-    co2_gramos = vuelo.get("carbon_emissions", {}).get("this_flight", 0)
-    co2 = f"{co2_gramos // 1000} kg CO2e" if co2_gramos else ""
-    precio = f"{vuelo['price']} €"
-
-    # Detalles del avión
-    num_vuelo = tramo.get("flight_number", "")
-    avion = tramo.get("airplane", "")
-    piernas = tramo.get("legroom", "").replace("cm", "").strip()
-
-    # Extras (Wi-Fi, enchufes, etc.)
+    tramo = vuelo["flights"][0]
     extras = " ".join(tramo.get("extensions", [])).lower()
-    wifi = "si" if "wi-fi" in extras else "no"
-    enchufes = "si" if "corriente" in extras or "usb" in extras else "no"
-    pantallas = "si" if "vídeo" in extras or "pantalla" in extras else "no"
-    retrasos = "si" if tramo.get("often_delayed_by_over_30_min") else "no"
-    equipaje_mano = "no" if "equipaje de mano" in str(vuelo.get("extensions", "")).lower() else "si"
+    minutos = vuelo["total_duration"]
+    escalas = len(vuelo.get("layovers", []))
+    co2 = vuelo.get("carbon_emissions", {}).get("this_flight", 0)
 
-    return [salida, llegada, aerolinea, duracion, escalas, co2, precio,
-            num_vuelo, avion, piernas, wifi, enchufes, pantallas, retrasos, equipaje_mano]
+    return [
+        tramo["departure_airport"]["time"].split()[1],
+        vuelo["flights"][-1]["arrival_airport"]["time"].split()[1],
+        tramo.get("airline", ""),
+        f"{minutos // 60} h {minutos % 60} min",
+        "Directo" if escalas == 0 else f"{escalas} escala",
+        f"{co2 // 1000} kg CO2e" if co2 else "",
+        f"{vuelo['price']} €",
+        tramo.get("flight_number", ""),
+        tramo.get("airplane", ""),
+        tramo.get("legroom", "").replace("cm", "").strip(),
+        si_no("wi-fi" in extras),
+        si_no("corriente" in extras or "usb" in extras),
+        si_no("vídeo" in extras or "pantalla" in extras),
+        si_no(tramo.get("often_delayed_by_over_30_min")),
+        si_no("equipaje de mano" not in str(vuelo.get("extensions", "")).lower()),
+    ]
 
 
-# Preparar el archivo CSV aparte
-existia = os.path.exists("vuelos_api.csv")
-archivo = open("vuelos_api.csv", "a", newline="", encoding="utf-8")
-escritor = csv.writer(archivo)
+def buscar_vuelos(origen, destino, fecha):
+    params = {
+        "engine": "google_flights", "departure_id": origen, "arrival_id": destino,
+        "outbound_date": fecha, "type": 2, "currency": "EUR", "hl": "es", "gl": "es",
+        "deep_search": "true", "show_hidden": "true", "api_key": API_KEY,
+    }
+    datos = requests.get("https://serpapi.com/search", params=params).json()
+    return datos.get("best_flights", []) + datos.get("other_flights", [])
 
-if not existia:
-    escritor.writerow(["fecha_consulta", "fecha", "origen", "destino", "salida", "llegada",
-                       "aerolinea", "duracion", "escalas", "co2", "precio",
-                       "num_vuelo", "avion", "piernas_cm", "wifi", "enchufes",
-                       "pantallas", "suele_retrasarse", "equipaje_mano"])
 
 hoy = date.today()
-fecha_consulta = hoy.isoformat()
+nuevo = not os.path.exists("vuelos_api.csv")
 
-# Buscar por día, origen y destino
-for dia in range(1, dias_a_buscar + 1):
-    fecha = (hoy + timedelta(days=dia)).isoformat()
+with open("vuelos_api.csv", "a", newline="", encoding="utf-8") as archivo:
+    escritor = csv.writer(archivo)
+    if nuevo:
+        escritor.writerow(COLUMNAS)
 
-    for origen in aeropuertos:
-        for destino in aeropuertos:
-            if origen == destino:
-                continue
-
-            url = f"https://serpapi.com/search?engine=google_flights&departure_id={origen}&arrival_id={destino}&outbound_date={fecha}&type=2&currency=EUR&hl=es&gl=es&deep_search=true&show_hidden=true&api_key={API_KEY}"
-            datos = requests.get(url).json()
-
-            # Juntamos los mejores vuelos y el resto de vuelos
-            vuelos = datos.get("best_flights", []) + datos.get("other_flights", [])
-
-            for vuelo in vuelos:
-                try:
-                    fila = [fecha_consulta, fecha, origen, destino] + leer_vuelo(vuelo)
+    for dia in range(1, dias_a_buscar + 1):
+        fecha = (hoy + timedelta(days=dia)).isoformat()
+        for origen in aeropuertos:
+            for destino in aeropuertos:
+                if origen == destino:
+                    continue
+                for vuelo in buscar_vuelos(origen, destino, fecha):
+                    try:
+                        fila = [hoy.isoformat(), fecha, origen, destino] + leer_vuelo(vuelo)
+                    except (KeyError, IndexError, TypeError):
+                        continue
                     escritor.writerow(fila)
                     print(fila)
-                except:
-                    continue
-
-            archivo.flush()
-
-archivo.close()
+                archivo.flush()
