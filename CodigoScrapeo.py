@@ -2,6 +2,7 @@ import csv
 import os
 import time
 import random
+import re
 from datetime import date, timedelta
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -66,12 +67,21 @@ def leer_detalles(elemento):
     piernas = ""
 
     # Si hay escalas nos quedamos con el primer tramo
+    # Google no siempre separa con " · " (a veces usa espacios raros o saltos de línea),
+    # así que buscamos los datos por su forma
+    texto = texto.replace("\xa0", " ").replace(" ", " ")
+    # Ejemplo de número de vuelo: "UX 7701", "IB 3001", "NT 5820"
+    encontrado = re.search(r"(?<![A-Z])([A-Z]{2}|[A-Z]\d|\d[A-Z]) (\d{1,4})\b(?! ?kg)", texto)
+    if encontrado:
+        num_vuelo = encontrado.group(1) + " " + encontrado.group(2)
+    # Ejemplo de avión: "Boeing 737", "Airbus A320neo", "ATR 72"
+    encontrado = re.search(r"(Airbus|Boeing|ATR|Embraer|Bombardier|Canadair|De Havilland)[^\n·]*", texto)
+    if encontrado:
+        avion = encontrado.group(0).strip()
+        if num_vuelo != "":
+            avion = avion.split(num_vuelo)[0].strip()  # por si viene pegado al número de vuelo
+
     for linea in texto.split("\n"):
-        # Ejemplo: "Air Europa · Turista · Boeing 737 · UX 7701"
-        partes = linea.split(" · ")
-        if len(partes) >= 3 and num_vuelo == "":
-            avion = partes[-2]
-            num_vuelo = partes[-1]
         # Ejemplo: "Espacio medio para las piernas (76 cm)"
         if "piernas" in linea and "cm" in linea and piernas == "":
             piernas = linea.split("(")[-1].replace("cm)", "").strip()
@@ -88,7 +98,7 @@ def leer_detalles(elemento):
 # Abrir el CSV para añadir filas al final (sin borrar lo anterior)
 # Si el archivo no existía, escribimos primero los nombres de las columnas
 # Ruta junto al script, para no depender de la carpeta desde la que se ejecute
-ruta_csv = os.path.join(os.path.dirname(os.path.abspath(__file__)), "vuelos.csv")
+ruta_csv = os.path.join(os.path.dirname(os.path.abspath(__file__)), "vuelos_nuevos.csv")
 existia = os.path.exists(ruta_csv)
 archivo = open(ruta_csv, "a", newline="", encoding="utf-8")
 escritor = csv.writer(archivo)
