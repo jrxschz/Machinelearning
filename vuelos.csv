@@ -13003,3 +13003,45 @@ fecha_consulta,fecha,origen,destino,salida,llegada,aerolinea,duracion,escalas,co
 2026-10-25,2026-10-29,LPA,TFS,14:45,13:40+1,Tap Air PortugalOperado por Portugalia - Companhia Portuguesa,22 h 55 min,1 escala,274 kg CO2e,385 €,,,71,no,no,no,no,si
 2026-10-25,2026-10-29,LPA,TFS,21:30,8:35+1,"IberiaOperado por Iberia Express, Iberia Express",11 h 5 min,1 escala,301 kg CO2e,455 €,,,71,no,si,no,no,si
 2026-10-25,2026-10-29,LPA,TFS,6:50,13:55,"IberiaOperado por Iberia Express, Iberia Express",7 h 5 min,1 escala,300 kg CO2e,677 €,,,71,no,si,no,no,si
+2026-10-27,2026-10-28,MAD,TFS,23:05,1:05+1,Iberia Express,3 h,Directo,,73 €,,,,no,no,no,no,si
+2026-10-27,2026-10-28,MAD,TFS,23:05,1:05+1,IberiaOperado por Iberia Express,3 h,Directo,155 kg CO2e,89 €,,,71,no,si,no,no,si
+2026-10-27,2026-10-28,MAD,TFS,7:00,11:10,Binter CanariasOperado por Naysa,5 h 10 min,1 escala,201 kg CO2e,108 €,,,79,no,no,no,no,si
+2026-10-27,2026-10-28,MAD,TFS,11:50,13:55,Iberia Express,3 h 5 min,Directo,,123 €,,,,no,no,no,no,si
+2026-10-27,2026-10-28,MAD,TFS,11:50,13:55,IberiaOperado por Iberia Express,3 h 5 min,Directo,155 kg CO2e,129 €,,,71,no,si,no,no,si
+2026-10-27,2026-10-28,MAD,TFS,6:05,13:35,"Lufthansa, Discover Airlines",8 h 30 min,1 escala,393 kg CO2e,334 €,,,76,no,no,no,no,si
+2026-10-27,2026-10-28,MAD,TFS,7:40,13:40,Tap Air PortugalOperado por Portugalia - Companhia Portuguesa,7 h,1 escala,224 kg CO2e,448 €,,,71,no,no,no,no,si
+2026-10-27,2026-10-28,MAD,TFS,16:30,23:00,Binter CanariasOperado por Canarias Airlines,7 h 30 min,1 escala,201 kg CO2e,653 €,,,79,no,no,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,23:15,0:35+1,Iberia Express,1 h 20 min,Directo,,26 €,,,,no,no,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,18:20,19:40,Iberia Express,1 h 20 min,Directo,,27 €,,,,no,no,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,18:20,19:40,IberiaOperado por Iberia Express,1 h 20 min,Directo,67 kg CO2e,31 €,,,71,no,si,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,12:20,13:50,Ryanair,1 h 30 min,Directo,67 kg CO2e,38 €,,,76,no,no,no,no,no
+2026-10-27,2026-10-28,MAD,PMI,10:15,11:35,Air Europa,1 h 20 min,Directo,63 kg CO2e,51 €,,,74,no,no,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,6:00,7:25,Iberia Express,1 h 25 min,Directo,,27 €,,,,no,no,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,6:00,7:25,IberiaOperado por Iberia Express,1 h 25 min,Directo,67 kg CO2e,31 €,,,71,no,si,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,23:15,0:35+1,IberiaOperado por Iberia Express,1 h 20 min,Directo,67 kg CO2e,31 €,,,71,no,si,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,7:50,9:20,Ryanair,1 h 30 min,Directo,67 kg CO2e,38 €,,,76,no,no,no,no,no
+2026-10-27,2026-10-28,MAD,PMI,20:45,22:15,Ryanair,1 h 30 min,Directo,57 kg CO2e,38 €,,,71,no,no,no,no,no
+2026-10-27,2026-10-28,MAD,PMI,21:45,23:05,Air Europa,1 h 20 min,Directo,64 kg CO2e,51 €,,,74,no,si,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,7:00,8:25,Iberia Express,1 h 25 min,Directo,,56 €,,,,no,no,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,20:30,21:50,Iberia Express,1 h 20 min,Directo,,67 €,,,,no,no,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,7:00,8:25,IberiaOperado por Iberia Express,1 h 25 min,Directo,65 kg CO2e,72 €,,,71,no,si,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,12:30,13:55,Iberia Express,1 h 25 min,Directo,,75 €,,,,no,no,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,17:20,18:40,Iberia Express,1 h 20 min,Directo,,75 €,,,,no,no,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,11:25,12:50,Iberia Express,1 h 25 min,Directo,,81 €,,,,no,no,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,15:50,17:15,Iberia Express,1 h 25 min,Directo,,82 €,,,,no,no,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,20:30,21:50,IberiaOperado por Iberia Express,1 h 20 min,Directo,67 kg CO2e,83 €,,,71,no,si,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,12:30,13:55,IberiaOperado por Iberia Express,1 h 25 min,Directo,67 kg CO2e,87 €,,,71,no,si,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,17:20,18:40,IberiaOperado por Iberia Express,1 h 20 min,Directo,65 kg CO2e,87 €,,,71,no,si,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,11:25,12:50,IberiaOperado por Iberia Express,1 h 25 min,Directo,65 kg CO2e,94 €,,,71,no,si,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,15:50,17:15,IberiaOperado por Iberia Express,1 h 25 min,Directo,67 kg CO2e,94 €,,,71,no,si,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,19:30,20:50,Iberia Express,1 h 20 min,Directo,,121 €,,,,no,no,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,19:00,20:20,Air EuropaOperado por Air Europa Express,1 h 20 min,Directo,63 kg CO2e,122 €,,,74,no,no,no,no,si
+2026-10-27,2026-10-28,MAD,PMI,19:30,20:50,IberiaOperado por Iberia Express,1 h 20 min,Directo,67 kg CO2e,125 €,,,,,,,,si
+2026-10-29,2026-10-30,MAD,TFS,6:30,8:35,Iberia Express,3 h 5 min,Directo,,70 €,,,,no,no,no,no,si
+2026-10-29,2026-10-30,MAD,TFS,6:30,8:35,IberiaOperado por Iberia Express,3 h 5 min,Directo,155 kg CO2e,74 €,,,71,no,si,no,no,si
+2026-10-29,2026-10-30,MAD,TFS,12:00,14:05,Iberia Express,3 h 5 min,Directo,,180 €,,,,no,no,no,no,si
+2026-10-29,2026-10-30,MAD,TFS,7:00,13:00,Binter CanariasOperado por Naysa,7 h,1 escala,201 kg CO2e,158 €,,,79,no,no,no,no,si
+2026-10-29,2026-10-30,MAD,TFS,12:00,14:05,IberiaOperado por Iberia Express,3 h 5 min,Directo,154 kg CO2e,187 €,,,71,no,si,no,no,si
+2026-10-29,2026-10-30,MAD,TFS,23:05,1:05+1,Iberia Express,3 h,Directo,,260 €,,,,no,no,no,no,si
+2026-10-29,2026-10-30,MAD,TFS,23:05,1:05+1,IberiaOperado por Iberia Express,3 h,Directo,155 kg CO2e,270 €,,,71,no,si,no,no,si
+2026-10-29,2026-10-30,MAD,TFS,7:40,13:40,Tap Air PortugalOperado por Portugalia - Companhia Portuguesa,7 h,1 escala,336 kg CO2e,408 €,,,84,no,si,no,no,si

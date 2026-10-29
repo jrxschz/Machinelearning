@@ -87,8 +87,10 @@ def leer_detalles(elemento):
 
 # Abrir el CSV para añadir filas al final (sin borrar lo anterior)
 # Si el archivo no existía, escribimos primero los nombres de las columnas
-existia = os.path.exists("vuelos.csv")
-archivo = open("vuelos.csv", "a", newline="", encoding="utf-8")
+# Ruta junto al script, para no depender de la carpeta desde la que se ejecute
+ruta_csv = os.path.join(os.path.dirname(os.path.abspath(__file__)), "vuelos.csv")
+existia = os.path.exists(ruta_csv)
+archivo = open(ruta_csv, "a", newline="", encoding="utf-8")
 escritor = csv.writer(archivo)
 if not existia:
     escritor.writerow(["fecha_consulta", "fecha", "origen", "destino", "salida", "llegada",
