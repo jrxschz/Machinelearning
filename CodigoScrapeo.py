@@ -160,9 +160,8 @@ for dia in range(1, dias_a_buscar + 1):
 
                 fila = [fecha_consulta, fecha, origen, destino] + datos + detalles
                 escritor.writerow(fila)
+                archivo.flush()  # guardar en el disco cada fila, por si el programa se corta
                 print(fila)
-
-            archivo.flush()  # guardar en el disco lo que llevamos
 
 archivo.close()
 driver.quit()
