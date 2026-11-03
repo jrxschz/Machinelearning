@@ -2107,3 +2107,7 @@ fecha_consulta,fecha,origen,destino,salida,llegada,aerolinea,duracion,escalas,co
 2026-11-03,2026-11-08,PMI,TFS,14:35,18:55,Iberia Express,5 h 20 min,1 escala,,368 €,I2 1664,,,no,no,no,no,si
 2026-11-03,2026-11-08,PMI,TFS,21:20,16:15+1,Smartwings,19 h 55 min,1 escala,397 kg CO2e,375 €,QS 1165,Boeing 737,76,no,si,no,no,si
 2026-11-03,2026-11-08,PMI,TFS,6:25,16:40,"Iberia, British AirwaysOperado por Iberia Express, BA Euroflyer",11 h 15 min,2 escalas,421 kg CO2e,877 €,IB 1680,Airbus A320,71,si,si,no,no,si
+2026-11-03,2026-11-08,PMI,IBZ,9:05,12:50,"IberiaOperado por Iberia Express, Iberia Express",3 h 45 min,1 escala,122 kg CO2e,46 €,IB 1652,Airbus A321neo,71,no,si,no,no,si
+2026-11-03,2026-11-08,PMI,IBZ,9:30,10:10,SwiftairAir Europa,40 min,Directo,,80 €,WT 7880,ATR 72,,no,no,no,no,si
+2026-11-03,2026-11-08,PMI,IBZ,12:40,13:20,SwiftairAir Europa,40 min,Directo,,136 €,WT 7773,ATR 72,,no,no,no,no,si
+2026-11-03,2026-11-08,PMI,IBZ,11:30,12:20,IberiaOperado por Air Nostrum for Iberia,50 min,Directo,42 kg CO2e,144 €,IB 2512,Canadair RJ 1000,79,no,no,no,no,si
