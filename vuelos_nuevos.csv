@@ -4075,3 +4075,61 @@ fecha_consulta,fecha,origen,destino,salida,llegada,aerolinea,duracion,escalas,co
 2026-11-05,2026-11-06,LPA,PMI,5:50,17:10,Iberia Express,10 h 20 min,1 escala,,152 €,I2 1632,,,no,no,no,no,si
 2026-11-05,2026-11-06,LPA,PMI,12:55,19:50,Iberia Express,5 h 55 min,1 escala,,152 €,I2 1612,,,no,no,no,no,si
 2026-11-05,2026-11-06,LPA,PMI,6:05,21:35,Air Europa,14 h 30 min,1 escala,183 kg CO2e,155 €,UX 9018,Boeing 737MAX 8 Passenger,74,no,si,no,no,si
+2026-11-05,2026-11-06,LPA,PMI,17:05,22:55,"IberiaOperado por Iberia Express, Iberia Express",4 h 50 min,1 escala,214 kg CO2e,181 €,IB 1616,Airbus A320,71,no,si,no,no,si
+2026-11-05,2026-11-06,LPA,PMI,9:00,17:10,Iberia Express,7 h 10 min,1 escala,,186 €,I2 1602,,,no,no,no,no,si
+2026-11-05,2026-11-06,LPA,PMI,17:05,22:55,Iberia Express,4 h 50 min,1 escala,,186 €,I2 1616,,,no,no,no,no,si
+2026-11-05,2026-11-06,LPA,PMI,6:05,15:55,Air EuropaOperado por Air Europa Express,8 h 50 min,1 escala,182 kg CO2e,195 €,UX 9018,Boeing 737MAX 8 Passenger,74,no,si,no,no,si
+2026-11-05,2026-11-06,LPA,PMI,18:45,0:50+1,"IberiaOperado por Iberia Express, Iberia Express",5 h 5 min,1 escala,211 kg CO2e,221 €,IB 1618,Airbus A321neo,71,no,si,no,no,si
+2026-11-05,2026-11-06,LPA,PMI,6:50,12:50,Iberia Express,5 h,1 escala,,226 €,I2 1630,,,no,no,no,no,si
+2026-11-05,2026-11-06,LPA,PMI,14:35,20:50,Iberia Express,5 h 15 min,1 escala,,226 €,I2 1610,,,no,no,no,no,si
+2026-11-05,2026-11-06,LPA,PMI,10:20,16:30,VuelingIberia,5 h 10 min,1 escala,224 kg CO2e,306 €,VY 3001,Airbus A321,74,si,si,no,no,no
+2026-11-05,2026-11-06,LPA,PMI,12:55,19:15,Iberia Express,5 h 20 min,1 escala,,312 €,I2 1612,,,no,no,no,no,si
+2026-11-05,2026-11-06,LPA,PMI,13:55,20:20,Air EuropaOperado por Air Europa Express,5 h 25 min,1 escala,182 kg CO2e,378 €,UX 9020,Boeing 737MAX 8 Passenger,74,no,si,no,no,si
+2026-11-05,2026-11-06,LPA,IBZ,18:05,14:05+1,Air Europa,19 h,1 escala,164 kg CO2e,89 €,UX 9165,Boeing 787,79,si,si,si,no,si
+2026-11-05,2026-11-06,LPA,IBZ,6:05,14:05,Air Europa,7 h,1 escala,176 kg CO2e,106 €,UX 9018,Boeing 737MAX 8 Passenger,74,no,si,no,no,si
+2026-11-05,2026-11-06,LPA,IBZ,5:50,12:50,Iberia Express,6 h,1 escala,,117 €,I2 1632,,,no,no,no,no,si
+2026-11-05,2026-11-06,LPA,IBZ,20:30,8:30+1,VuelingIberia,11 h,1 escala,231 kg CO2e,146 €,VY 3009,Airbus A321,74,si,si,no,no,no
+2026-11-05,2026-11-06,LPA,IBZ,5:50,12:50,"IberiaOperado por Iberia Express, Iberia Express",6 h,1 escala,204 kg CO2e,206 €,IB 1632,Airbus A320,71,no,si,no,no,si
+2026-11-05,2026-11-06,LPA,IBZ,21:30,12:50+1,"IberiaOperado por Iberia Express, Iberia Express",14 h 20 min,1 escala,205 kg CO2e,154 €,IB 1626,Airbus A321neo,71,no,si,no,no,si
+2026-11-05,2026-11-06,LPA,IBZ,6:50,12:50,Iberia Express,5 h,1 escala,,184 €,I2 1630,,,no,no,no,no,si
+2026-11-05,2026-11-06,LPA,IBZ,21:30,8:25+1,"IberiaOperado por Iberia Express, Iberia Express",9 h 55 min,1 escala,205 kg CO2e,201 €,IB 1626,Airbus A321neo,71,no,si,no,no,si
+2026-11-05,2026-11-06,LPA,IBZ,13:00,19:15,VuelingIberia,5 h 15 min,1 escala,229 kg CO2e,359 €,VY 3011,Airbus A320,74,si,si,no,no,no
+2026-11-05,2026-11-06,LPA,IBZ,11:20,17:10,"IberiaOperado por Iberia Express, Iberia Express",4 h 50 min,1 escala,205 kg CO2e,553 €,IB 1606,Airbus A321neo,71,no,si,no,no,si
+2026-11-05,2026-11-06,LPA,IBZ,11:20,17:10,Iberia Express,4 h 50 min,1 escala,,626 €,I2 1606,,,no,no,no,no,si
+2026-11-05,2026-11-07,MAD,TFS,12:00,14:05,Iberia Express,3 h 5 min,Directo,,76 €,I2 1545,,,no,no,no,no,si
+2026-11-05,2026-11-07,MAD,TFS,16:00,18:05,Iberia Express,3 h 5 min,Directo,,76 €,I2 1549,,,no,no,no,no,si
+2026-11-05,2026-11-07,MAD,TFS,12:00,14:05,IberiaOperado por Iberia Express,3 h 5 min,Directo,154 kg CO2e,81 €,IB 1545,Airbus A321neo,71,no,si,no,no,si
+2026-11-05,2026-11-07,MAD,TFS,23:05,1:05+1,Iberia Express,3 h,Directo,,73 €,I2 1553,,,no,no,no,no,si
+2026-11-05,2026-11-07,MAD,TFS,16:00,18:05,IberiaOperado por Iberia Express,3 h 5 min,Directo,155 kg CO2e,81 €,IB 1549,Airbus A320,71,no,si,no,no,si
+2026-11-05,2026-11-07,MAD,TFS,23:05,1:05+1,IberiaOperado por Iberia Express,3 h,Directo,155 kg CO2e,81 €,IB 1553,Airbus A320,71,no,si,no,no,si
+2026-11-05,2026-11-07,MAD,TFS,7:00,14:40,Binter CanariasOperado por Canarias Airlines,8 h 40 min,1 escala,201 kg CO2e,178 €,NT 6017,Embraer 195 E2,79,no,no,no,no,si
+2026-11-05,2026-11-07,MAD,TFS,6:25,13:20,Brussels Airlines,7 h 55 min,1 escala,358 kg CO2e,315 €,SN 3732,Airbus A320,74,no,no,no,no,si
+2026-11-05,2026-11-07,MAD,TFS,6:05,13:50,"Lufthansa, Discover Airlines",8 h 45 min,1 escala,391 kg CO2e,427 €,LH 1117,Airbus A320,76,no,no,no,no,si
+2026-11-05,2026-11-07,MAD,TFS,16:30,23:00,Binter CanariasOperado por Canarias Airlines,7 h 30 min,1 escala,201 kg CO2e,653 €,NT 6015,Embraer 195 E2,79,no,no,no,no,si
+2026-11-05,2026-11-07,MAD,PMI,20:30,21:50,Iberia Express,1 h 20 min,Directo,,28 €,I2 1675,,,no,no,no,no,si
+2026-11-05,2026-11-07,MAD,PMI,20:30,21:50,IberiaOperado por Iberia Express,1 h 20 min,Directo,65 kg CO2e,31 €,IB 1675,Airbus A321neo,71,no,si,no,no,si
+2026-11-05,2026-11-07,MAD,PMI,14:45,16:15,Ryanair,1 h 30 min,Directo,61 kg CO2e,35 €,FR 2053,Boeing 737,76,no,no,no,no,no
+2026-11-05,2026-11-07,MAD,PMI,23:30,0:50+1,Iberia Express,1 h 20 min,Directo,,27 €,I2 1679,,,no,no,no,no,si
+2026-11-05,2026-11-07,MAD,PMI,23:30,0:50+1,IberiaOperado por Iberia Express,1 h 20 min,Directo,67 kg CO2e,31 €,IB 1679,Airbus A320,71,no,si,no,no,si
+2026-11-05,2026-11-07,MAD,PMI,6:00,7:25,Iberia Express,1 h 25 min,Directo,,35 €,I2 1653,,,no,no,no,no,si
+2026-11-05,2026-11-07,MAD,PMI,19:30,20:50,Iberia Express,1 h 20 min,Directo,,35 €,I2 1677,,,no,no,no,no,si
+2026-11-05,2026-11-07,MAD,PMI,6:00,7:30,Ryanair,1 h 30 min,Directo,61 kg CO2e,35 €,FR 2061,Boeing 737,76,no,no,no,no,no
+2026-11-05,2026-11-07,MAD,PMI,12:20,13:50,Ryanair,1 h 30 min,Directo,52 kg CO2e,35 €,FR 2775,Boeing 737MAX 8 Passenger,71,no,no,no,no,no
+2026-11-05,2026-11-07,MAD,PMI,19:25,20:55,Ryanair,1 h 30 min,Directo,61 kg CO2e,35 €,FR 2063,Boeing 737,76,no,no,no,no,no
+2026-11-05,2026-11-07,MAD,PMI,21:05,22:35,RyanairOperado por Lauda Europe,1 h 30 min,Directo,61 kg CO2e,35 €,FR 404,Airbus A320,71,no,no,no,no,no
+2026-11-05,2026-11-07,MAD,PMI,7:00,8:25,Iberia Express,1 h 25 min,Directo,,39 €,I2 1651,,,no,no,no,no,si
+2026-11-05,2026-11-07,MAD,PMI,8:30,9:55,Iberia Express,1 h 25 min,Directo,,44 €,I2 1655,,,no,no,no,no,si
+2026-11-05,2026-11-07,MAD,PMI,6:00,7:25,IberiaOperado por Iberia Express,1 h 25 min,Directo,67 kg CO2e,46 €,IB 1653,Airbus A320,71,no,si,no,no,si
+2026-11-05,2026-11-07,MAD,PMI,19:30,20:50,IberiaOperado por Iberia Express,1 h 20 min,Directo,65 kg CO2e,46 €,IB 1677,Airbus A321neo,71,no,si,no,no,si
+2026-11-05,2026-11-07,MAD,PMI,8:20,9:45,Air Europa,1 h 25 min,Directo,64 kg CO2e,51 €,UX 6031,Boeing 737,74,no,si,no,no,si
+2026-11-05,2026-11-07,MAD,PMI,10:15,11:35,Air EuropaOperado por Air Europa Express,1 h 20 min,Directo,63 kg CO2e,51 €,UX 6013,Boeing 737,74,no,no,no,no,si
+2026-11-05,2026-11-07,MAD,PMI,19:00,20:20,Air EuropaOperado por Air Europa Express,1 h 20 min,Directo,63 kg CO2e,51 €,UX 6097,Boeing 737,74,no,no,no,no,si
+2026-11-05,2026-11-07,MAD,PMI,21:45,23:05,Air Europa,1 h 20 min,Directo,63 kg CO2e,51 €,UX 6049,Boeing 737,74,no,no,no,no,si
+2026-11-05,2026-11-07,MAD,PMI,7:00,8:25,IberiaOperado por Iberia Express,1 h 25 min,Directo,67 kg CO2e,54 €,IB 1651,Airbus A320,71,no,si,no,no,si
+2026-11-05,2026-11-07,MAD,PMI,8:30,9:55,IberiaOperado por Iberia Express,1 h 25 min,Directo,67 kg CO2e,54 €,IB 1655,Airbus A320,71,no,si,no,no,si
+2026-11-05,2026-11-07,MAD,PMI,17:05,18:25,Air Europa,1 h 20 min,Directo,64 kg CO2e,61 €,UX 6079,Boeing 737,74,no,si,no,no,si
+2026-11-05,2026-11-07,MAD,PMI,12:30,13:55,Iberia Express,1 h 25 min,Directo,,70 €,I2 1663,,,no,no,no,no,si
+2026-11-05,2026-11-07,MAD,PMI,14:35,15:55,Air EuropaOperado por Air Europa Express,1 h 20 min,Directo,63 kg CO2e,76 €,UX 6067,Boeing 737,74,no,no,no,no,si
+2026-11-05,2026-11-07,MAD,PMI,11:25,12:50,Iberia Express,1 h 25 min,Directo,,79 €,I2 1659,,,no,no,no,no,si
+2026-11-05,2026-11-07,MAD,PMI,15:50,17:15,Iberia Express,1 h 25 min,Directo,,81 €,I2 1667,,,no,no,no,no,si
+2026-11-05,2026-11-07,MAD,PMI,17:20,18:40,Iberia Express,1 h 20 min,Directo,,82 €,,,,,,,,si
