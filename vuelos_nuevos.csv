@@ -4539,3 +4539,4 @@ fecha_consulta,fecha,origen,destino,salida,llegada,aerolinea,duracion,escalas,co
 2026-11-05,2026-11-06,MAD,IBZ,7:10,8:25,Iberia Express,1 h 15 min,Directo,,29 €,I2 1691,,,no,no,no,no,si
 2026-11-05,2026-11-06,MAD,IBZ,7:10,8:25,IberiaOperado por Iberia Express,1 h 15 min,Directo,57 kg CO2e,31 €,IB 1691,Airbus A321neo,71,no,si,no,no,si
 2026-11-05,2026-11-06,MAD,IBZ,13:45,15:05,Ryanair,1 h 20 min,Directo,55 kg CO2e,38 €,FR 2066,Boeing 737,76,no,no,no,no,no
+2026-11-05,2026-11-06,MAD,IBZ,12:50,14:05,Air Europa,1 h 15 min,Directo,57 kg CO2e,41 €,UX 6025,Boeing 737,74,no,si,no,no,si
