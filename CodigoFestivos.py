@@ -18,6 +18,10 @@ AEROPUERTOS = {
     "TFS": ("Tenerife Sur", "CN"),
     "SVQ": ("Sevilla", "AN"),
     "VLC": ("Valencia", "VC"),
+    "AGP": ("Málaga", "AN"),
+    "ALC": ("Alicante", "VC"),
+    "BIO": ("Bilbao", "PV"),
+    "TFN": ("Tenerife Norte", "CN"),
 }
 
 DIAS_SEMANA = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"]
